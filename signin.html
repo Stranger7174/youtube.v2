@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+</head>
+<style>
+  #sininpage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #loginbar {
+    width: 350px;
+    height: 450px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginput {
+    height: 30px;
+    width: 200px;
+    margin: 5px;
+  }
+  .sigbtn {
+    height: 30px;
+    width: 80px;
+    border: 0;
+  }
+  .signin {
+    background-color: transparent;
+    color: #292cf0;
+  }
+  .loginbtn {
+    float: right;
+    border-radius: 5px;
+    background-color: #292cf0;
+    color: #f3f3f3;
+  }
+
+</style>
+<body>
+  <div id="sininpage">
+    <div id="loginbar">
+      <form action="signinok.php" method="post" id="logphp">
+        <h3 style="text-align: center">로그인</h3>
+        <input type="email" id="email" class="loginput" name="email" placeholder="이메일"><br>
+        <input type="password" id="password" class="loginput" name="password" placeholder="비밀번호"><br>
+        <button id="signup" class="sigbtn signin" type="button" onclick="sigupbtn()">회원가입</button>
+        <button id="signin" class="sigbtn loginbtn">로그인</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  function sigupbtn() {
+    console.log('aa');
+    location.href = "http://localhost/youtube.v2/signup.html";
+  }
+</script>

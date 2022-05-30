@@ -1,0 +1,34 @@
+<?php
+include('common.php')?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+</head>
+<style>
+  .signinbar {
+    height: 30px;
+    width: 200px;
+    margin: 5px;
+  }
+  .signinbtn {
+    background-color: #292cf0;
+    border: 0;
+    border-radius: 5px;
+    color: #f3f3f3;
+  }
+</style>
+<body>
+  <div id="singuppage">
+    <form action="signupok.php" method="post">
+      <input type="text" id="nickname" class="signinbar" name="nickname" placeholder="닉네임"><br>
+      <input type="email" id="email" class="signinbar" name="email" placeholder="이메일"><br>
+      <input type="password" id="password" class="signinbar" name="password" placeholder="비밀번호"><br>
+      <button id="signup" class="signinbtn signinbar">가입</button>
+    </form>
+  </div>
+</body>
+</html>

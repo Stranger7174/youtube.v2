@@ -1,0 +1,43 @@
+.icon {
+  height: 25px;
+  width: 25px;
+  margin: 7px;
+}
+.hend:hover {
+  cursor: pointer;
+}
+#mainbar {
+  display: flex;
+  justify-content: space-between;
+}
+#start {
+  display: flex;
+}
+#youtube {
+  height: 30px;
+  margin: 5px;
+}
+#center {
+  display: flex;
+}
+.serchcon {
+  display: flex;
+}
+.serchin {
+  display: flex;
+}
+.serch {
+  height: 25px;
+}
+.voice {
+  height: 35px;
+  width: 35px;
+  border-radius: 17.5px;
+  background-color: #545454;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+#end {
+  display: flex;
+}
