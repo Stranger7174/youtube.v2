@@ -1,6 +1,5 @@
 <?php
 include('common.php');
-echo "aa";
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -12,9 +11,20 @@ echo "aa";
 </head>
 <body>
   <div id="contein">
-    <div id="items">
-      
-    </div>
+    <script>
+      while () {
+        <div id="items">
+          <div><?php echo "$video";?></div>
+          <div>
+            <div id="image"><?php $img?></div>
+            <div id="title"><?php ?></div>
+            <div id="nickname"><?php ?></div>
+            <div id="viewcount"><?php ?></div>
+            <div id="uplodetime"><?php ?></div>
+          </div>
+        </div>
+      }
+    </script>
   </div>
 </body>
 </html>
