@@ -24,7 +24,7 @@ if ($db_pw) {
     echo "
       <script>
         alert('로그인 성공');
-        location.href='index.html';
+        location.href='index.php';
       </script>
     ";
   } else {

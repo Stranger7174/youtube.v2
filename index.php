@@ -1,5 +1,12 @@
 <?php
 include('common.php');
+
+$no = 3;
+
+$sql = "select * from video_content where no = '".$no."'";
+
+$result_u = $conn -> query($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -11,20 +18,18 @@ include('common.php');
 </head>
 <body>
   <div id="contein">
-    <script>
-      while () {
-        <div id="items">
-          <div><?php echo "$video";?></div>
-          <div>
-            <div id="image"><?php $img?></div>
-            <div id="title"><?php ?></div>
-            <div id="nickname"><?php ?></div>
-            <div id="viewcount"><?php ?></div>
-            <div id="uplodetime"><?php ?></div>
-          </div>
+    <?php while ($row = mysqli_fetch_assoc($result_u)) { ?>
+      <div id="items">
+        <!-- <div style="display: hiden;"><?php $row['no'] ?></div> -->
+        <div><?php echo $row['video'];?></div>
+        <div>
+          <div id="title"><?php echo $row['title'] ?></div>
+          <div id="uploder"><?php echo $row['uploder'] ?></div>
+          <div id="viewcount"><?php echo $row['viewcount'] ?></div>
+          <div id="uplodetime"><?php echo $row['time'] ?></div>
         </div>
-      }
-    </script>
+      </div>
+    <?php } ?>
   </div>
 </body>
 </html>
