@@ -1,6 +1,7 @@
+/* .mainicon  */
 .icon {
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   margin: 7px;
 }
 .hend:hover {
@@ -13,6 +14,9 @@
 #start {
   display: flex;
 }
+.togglbtn {
+  margin-left: 16px;
+}
 #youtube {
   height: 30px;
   margin: 5px;
@@ -20,14 +24,37 @@
 #center {
   display: flex;
 }
+/* 검색바 전체 묶음 */
 .serchcon {
   display: flex;
 }
+/* 인풋 묶음 */
 .serchin {
   display: flex;
+  border: 1px solid gray;
+  align-items: center;
 }
+/* 인풋 */
 .serch {
-  height: 25px;
+  height: 35px;
+  border: 0px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.scope {
+  border: 1px solid gray;
+  background-color: #808080;
+  display: flex;
+  align-items: center;
+}
+.scopebtn {
+  height: 35px;
+  width: 40px;
+  border: 0px;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .voice {
   height: 35px;
@@ -35,9 +62,26 @@
   border-radius: 17.5px;
   background-color: #545454;
   display: flex;
-  justify-items: center;
   align-items: center;
 }
 #end {
   display: flex;
+}
+#mainenav {
+  width: 65px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+}
+#bignav {
+  width: 150px;
+  display: flex;
+  flex-flow: column;
+}
+.bigitems {
+  display: flex;
+}
+.bigitems svg {
+  margin-right: 22px;
 }
