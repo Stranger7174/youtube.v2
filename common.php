@@ -237,11 +237,83 @@ $conn = mysqli_connect($host, $user, '', $db);
 </body>
 </html>
 <script>
-  function uplode() {
-    // console.log('aa');
-    location.href = "uplode.php";
+var big;
+var min;
+var video;
+document.addEventListener("DOMContentLoaded", function(){
+  big = document.querySelector("#bignav");
+  console.log(big);
+  min = document.querySelector("#minenav");
+  console.log(min);
+  video = document.querySelector("#contein");
+  console.log(video);
+});
+
+function resize() {
+  // console.log('실행');
+  var width = window.innerWidth;
+  if (1320 < width) {
+    console.log("1320");
+    big.style.display = "block";
+    min.style.display = "none";
+    video.style.left = '150px';
+  } else if (810 < width) {
+    console.log("810");
+    big.style.display = "none";
+    min.style.display = "block";
+    video.style.left = '60px';
+  } else {
+    console.log("400");
+    big.style.display = "none";
+    min.style.display = "none";
+    video.style.left = '0px';
   }
-  function login() {
-    location.href = "signin.html";
+}
+function navtoggl() {
+  if (810 < innerWidth) {
+    if (big.style.display === "none") {
+      console.log('논');
+      big.style.display = "block";
+      console.log(1);
+      min.style.display = "none";
+      console.log(2);
+      video.style.left = "150px";
+      video.style.width = "100vw";
+      console.log(3);
+      // alert("none");
+    } else {
+      console.log('블럭');
+      big.style.display = "none";
+      console.log(1);
+      min.style.display = "block";
+      console.log(2);
+      video.style.left = "60px";
+      video.style.width = "100vw";
+      console.log(3);
+    }
+  
+  } else {
+    if (big.style.display === "none") {
+      console.log('800논');
+      big.style.display = "block";
+      big.style.position = "absolute";
+      // console.log(1);
+      video.style.width = "100vw";
+      // console.log(2);        
+    } else {
+      console.log('800블럭');
+      big.style.display = "none";
+      // console.log(1);
+      video.style.width = "100vw";
+      // console.log(3);
+    }
   }
+}
+function uplode() {
+  // console.log('aa');
+  location.href = "uplode.php";
+}
+function login() {
+  location.href = "signin.html";
+}
 </script>
