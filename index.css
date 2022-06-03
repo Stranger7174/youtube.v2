@@ -67,8 +67,17 @@
 #end {
   display: flex;
 }
+.login {
+  border: 1px solid #292cf0;
+  color: #292cf0;
+}
+nav {
+  float: left;
+}
+
 #mainenav {
   width: 65px;
+  /* float: left; */
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -84,4 +93,28 @@
 }
 .bigitems svg {
   margin-right: 22px;
+}
+@media only screen and (min-width: 1321px) {
+  #bignav {
+    display: block;
+  }
+  #mainenav {
+    display: none;
+  }  
+}
+@media only screen and (max-width: 1320px) {
+  #bignav {
+    display: none;
+  }
+  #mainenav {
+    display: block;
+  }
+}
+@media only screen and (max-width: 810px) {
+  #bignav {
+    display: none;
+  }
+  #mainenav {
+    display: none;
+  }
 }

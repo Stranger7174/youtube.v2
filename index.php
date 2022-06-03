@@ -1,9 +1,9 @@
 <?php
 include('common.php');
 
-$no = 3;
+// $no = 3;
 
-$sql = "select * from video_content where no = '".$no."'";
+$sql = "select * from video_content where no";
 
 $result_u = $conn -> query($sql);
 
@@ -16,6 +16,17 @@ $result_u = $conn -> query($sql);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  #contein {
+    float: left;
+    top: 50px;
+    /* left: 150px; */
+    display: flex;
+  }
+  #items {
+    margin: 5px;
+  }
+</style>
 <body>
   <div id="contein">
     <?php while ($row = mysqli_fetch_assoc($result_u)) { ?>
