@@ -19,13 +19,13 @@ $sql_u = "insert into video_content set
 $result_u = $conn -> query($sql);
 
 if ($result_u) {
-        echo "
-        <script>
-        if (confirm("더 업로드 하시겠습니까?")) {
-                location.back
-        } else {
-                localhost.index.php
-        }
-        </script>"
+  echo "
+  <script>
+  if (confirm('더 업로드 하시겠습니까?')) {
+    location.back
+  } else {
+    localhost.index.php
+  }
+  </script>";
 }
 ?>
