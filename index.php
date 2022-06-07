@@ -32,7 +32,7 @@ $result_u = $conn -> query($sql);
     <?php while ($row = mysqli_fetch_assoc($result_u)) { ?>
       <div id="items">
         <!-- <div style="display: hiden;"><?php $row['no'] ?></div> -->
-        <div><?php echo $row['video'];?></div>
+        <iframe><?php echo $row['video'];?></iframe>
         <div>
           <div id="title"><?php echo $row['title'] ?></div>
           <div id="uploder"><?php echo $row['uploder'] ?></div>
