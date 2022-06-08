@@ -21,28 +21,28 @@ $sql_u = "insert into video_content set
 
 $result_u = $conn -> query($sql_u);
 
-if ($result_u) {
-  print_r( $_FILES[ 'video' ] );
-  echo "<br>";
-  echo $_FILES[ 'video' ][ 'name' ];
-  echo "<br>";
-  echo $_FILES[ 'video' ][ 'type' ];
-  echo "<br>";
-  echo $_FILES[ 'video' ][ 'size' ];
-  echo "<br>";
-  echo $_FILES[ 'video' ][ 'tmp_name' ];
-  echo "<br>";
-  echo $_FILES[ 'video' ][ 'error' ];
-}
-//     if ($result_u) {
-//   echo "
-//   <script>
-//   if (confirm('더 업로드 하시겠습니까?')) {
-//     location.back
-//   } else {
-//     localhost.index.php
-//   }
-//   </script>";
+// if ($result_u) {
+//   print_r( $_FILES[ 'video' ] );
+//   echo "<br>";
+//   echo $_FILES[ 'video' ][ 'name' ];
+//   echo "<br>";
+//   echo $_FILES[ 'video' ][ 'type' ];
+//   echo "<br>";
+//   echo $_FILES[ 'video' ][ 'size' ];
+//   echo "<br>";
+//   echo $_FILES[ 'video' ][ 'tmp_name' ];
+//   echo "<br>";
+//   echo $_FILES[ 'video' ][ 'error' ];
 // }
+if ($result_u) {
+  echo "
+  <script>
+  if (confirm('더 업로드 하시겠습니까?')) {
+    location.back
+  } else {
+    localhost.index.php
+  }
+  </script>";
+}
 
 ?>

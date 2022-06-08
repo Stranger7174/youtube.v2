@@ -5,11 +5,12 @@ include('main.html');
 $no = $_GET['no'];
 // $no = 5;
 // $sql_u = "get from video_content * where no";
-$sql = "get * from video_content where no = '$no'";
+$sql = "select * from video_content where no = '$no'";
+echo $sql;
+print_r ($sql);
 
 $result = $conn -> query($sql);
 
-print_r ($sql);
 echo '<br>';
 print_r ($result);
 
@@ -37,12 +38,12 @@ print_r ($result);
 </style>
 <body>
   <form>
-    <video class="play" controls src=<? echo $row['video'];?>></video>
-    <div id="title"></div>
-    <div id="uploder"></div>
-    <div id="tag"></div>
-    <div id="time"></div>
-    <div id="viewcount"></div>
+    <video class="play" controls src = <? echo $row['video'];?>></video>
+    <div id="title"><? echo $row['title'];?></div>
+    <div id="uploder"><? echo $row['uploder'];?></div>
+    <div id="tag"><? echo $row['tag'];?></div>
+    <div id="time"><? echo $row['time'];?></div>
+    <div id="viewcount"><? echo $row['viewcount'];?></div>
   </form>
 </body>
 </html>
