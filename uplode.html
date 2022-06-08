@@ -1,17 +1,21 @@
+<?php
+include('main.html');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>tst</title>
 </head>
 <body>
-  <form action="uplode.php" method="post" enctype="multipart/form-data">
-    <input id="video" class="" name="video" type="file" placeholder="컨텐츠 주소" require >
+  <form action="uplodeok.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="MAX_FILE_SIZE" value="1,099,511,627,776">
+    <input id="video" class="" name="video" type="file" value="1" placeholder="비디오 파일" require >
     <input id="title" class="" name="title" type="text" placeholder="제목" require>
     <input id="tag" class="" name="tag" type="text" placeholder="태그">
-    <button onclick="uplode()">업로드</button>
+    <button type="submit">업로드</button>
   </form>
 </body>
 </html>

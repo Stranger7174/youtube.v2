@@ -1,11 +1,10 @@
 <?php
 include('common.php');
+include('main.html');
 
-$no = 3;
+$sql = "select * from video_content";
 
-$sql = "select * from video_content where no";
-
-$result_u = $conn -> query($sql);
+$result = $conn -> query($sql);
 
 ?>
 <!DOCTYPE html>
@@ -20,25 +19,37 @@ $result_u = $conn -> query($sql);
   #contein {
     float: left;
     top: 50px;
-    /* left: 150px; */
+    left: 150px;
+    min-width: 100%;
     display: flex;
+    flex-flow: wrap;
+
   }
   #items {
     margin: 5px;
   }
+  #items iframe {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  #tocontent {
+    color: black;
+    text-decoration: none;
+  }
 </style>
 <body>
-  <div id="contein">
-    <?php while ($row = mysqli_fetch_assoc($result_u)) { ?>
+  <div id="contein" onclick="location.href = 'player.php'">
+    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
       <div id="items">
-        <!-- <div style="display: hiden;"><?php $row['no'] ?></div> -->
-        <iframe src="player.php"><?php echo $row['video'];?></iframe>
-        <div>
-          <div id="title"><?php echo $row['title'] ?></div>
-          <div id="uploder"><?php echo $row['uploder'] ?></div>
-          <div id="viewcount"><?php echo $row['viewcount'] ?></div>
-          <div id="uplodetime"><?php echo $row['time'] ?></div>
-        </div>
+        <a id="tocontent" href="player.php?no=<?php echo $row['no'] ?>">
+          <iframe src="video.php" scrolling="no"><?php echo $row['video'];?></iframe>
+          <div>
+            <div id="title"><?php echo $row['title'] ?></div>
+            <div id="uploder"><?php echo $row['uploder'] ?></div>
+            <div id="viewcount"><?php echo $row['viewcount'] ?></div>
+            <div id="uplodetime"><?php echo $row['time'] ?></div>
+          </div>
+        </a>
       </div>
     <?php } ?>
   </div>
