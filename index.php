@@ -42,6 +42,9 @@ $result = $conn -> query($sql);
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
       <div id="items">
         <a id="tocontent" href="player.php?no=<?php echo $row['no'] ?>">
+        <script>
+          // location.;
+        </script>
           <iframe src="video.php" scrolling="no"><?php echo $row['video'];?></iframe>
           <div>
             <div id="title"><?php echo $row['title'] ?></div>

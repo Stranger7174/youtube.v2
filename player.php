@@ -6,14 +6,15 @@ $no = $_GET['no'];
 // $no = 5;
 // $sql_u = "get from video_content * where no";
 $sql = "select * from video_content where no = '$no'";
-echo $sql;
-print_r ($sql);
+
 
 $result = $conn -> query($sql);
 
 echo '<br>';
 print_r ($result);
 
+
+$row = mysqli_fetch_assoc($result);
 ?>
 <style>
   #mainenav, #bignav {
@@ -38,12 +39,13 @@ print_r ($result);
 </style>
 <body>
   <form>
-    <video class="play" controls src = <? echo $row['video'];?>></video>
-    <div id="title"><? echo $row['title'];?></div>
-    <div id="uploder"><? echo $row['uploder'];?></div>
-    <div id="tag"><? echo $row['tag'];?></div>
-    <div id="time"><? echo $row['time'];?></div>
-    <div id="viewcount"><? echo $row['viewcount'];?></div>
+    <?php echo $row['video'] ?>
+    <video class="play" controls src = "./video/<?php echo $row['video'];?>"></video>
+    <div id="title" class="info"><?php echo $row['title'];?></div>
+    <div id="uploder" class="info"><?php echo $row['uploder'];?></div>
+    <div id="tag" class="info"><?php echo $row['tag'];?></div>
+    <div id="time"><?php echo $row['time'];?></div>
+    <div id="viewcount"><?php echo $row['viewcount'];?></div>
   </form>
 </body>
 </html>
