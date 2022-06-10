@@ -50,5 +50,4 @@ $row = mysqli_fetch_assoc($result);
 </body>
 </html>
 <script>
-  console.log('aa');
 </script>

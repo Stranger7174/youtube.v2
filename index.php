@@ -38,14 +38,11 @@ $result = $conn -> query($sql);
   }
 </style>
 <body>
-  <div id="contein" onclick="location.href = 'player.php'">
+  <div id="contein" >
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-      <div id="items">
-        <a id="tocontent" href="player.php?no=<?php echo $row['no'] ?>">
-        <script>
-          // location.;
-        </script>
-          <iframe src="video.php" scrolling="no"><?php echo $row['video'];?></iframe>
+      <div id="items" name='items' onload="viewvideo()" onclick="viewvideo(<?php $row['no']?>)">
+        <a id="tocontent"><!--  href="player.php?no=<?php echo $row['no'] ?>" -->
+          <iframe id="video"  scrolling="no" ><?php echo $row['video'];?></iframe><!--onclick="location.href = 'player.php'"src="video.php"  -->
           <div>
             <div id="title"><?php echo $row['title'] ?></div>
             <div id="uploder"><?php echo $row['uploder'] ?></div>
@@ -58,3 +55,18 @@ $result = $conn -> query($sql);
   </div>
 </body>
 </html>
+<script>
+  function viewvideo() {
+    console.log('aa');
+    var video = document.querySelector('#video');
+    var videoclass = document.getElementsByName('video');
+      
+    video.addEventListener('lode', () => {
+      console.log('lode');
+    });
+    videoclass.addEventListener('cllick', () => {
+      console.log('click');
+    });
+    /* location.href = 'player.php' */
+  }
+</script>

@@ -10,8 +10,9 @@ include('main.html');
   <title>tst</title>
 </head>
 <body>
-  <form action="uplodeok.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="MAX_FILE_SIZE" value="1,099,511,627,776">
+  <form enctype="multipart/form-data" action="uplodeok.php" method="post">
+  
+    <input type="hidden" name="max-file-size" value="1,099,511,627,776"><!-- name을 대문자로 하면 애러남 -->
     <input id="video" class="" name="video" type="file" placeholder="비디오 파일" require >
     <input id="title" class="" name="title" type="text" placeholder="제목" require>
     <input id="tag" class="" name="tag" type="text" placeholder="태그">

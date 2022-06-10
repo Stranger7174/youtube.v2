@@ -40,17 +40,16 @@ if ($result_u) {
   echo $error;
 }
 
-
+move_uploaded_file($tmp_file, $path.$video);
 if ($result_u) {  
-  // echo "
-  // <script>
-  // if (confirm('더 업로드 하시겠습니까?')) {
-  //   console.dir(history);
-  //   history.back;
-  // } else {
-  //   location.href = 'index.php';
-  // }
-  // </script>";
+  echo "
+  <script>
+  if (confirm('더 업로드 하시겠습니까?')) {
+    location.href = 'uplode.php';
+  } else {
+    location.href = 'index.php';
+  }
+  </script>";
 }
 
 ?>
