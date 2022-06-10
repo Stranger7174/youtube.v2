@@ -25,12 +25,16 @@ $result = $conn -> query($sql);
     flex-flow: wrap;
 
   }
+
   #items {
     margin: 5px;
   }
-  #items iframe {
+  /* #items iframe {
     overflow-y: hidden;
     overflow-x: hidden;
+  } */
+  .videos {
+    width: 300px;
   }
   #tocontent {
     color: black;
@@ -42,7 +46,7 @@ $result = $conn -> query($sql);
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
       <div id="items" name='items' onload="viewvideo()" onclick="viewvideo(<?php $row['no']?>)">
         <a id="tocontent"><!--  href="player.php?no=<?php echo $row['no'] ?>" -->
-          <iframe id="video"  scrolling="no" ><?php echo $row['video'];?></iframe><!--onclick="location.href = 'player.php'"src="video.php"  -->
+          <video id="video" class="videos" scrolling="no" src="./video/<?php echo $row['video'];?>"></video><!--onclick="location.href = 'player.php'"src="video.php"  -->
           <div>
             <div id="title"><?php echo $row['title'] ?></div>
             <div id="uploder"><?php echo $row['uploder'] ?></div>
@@ -55,7 +59,7 @@ $result = $conn -> query($sql);
   </div>
 </body>
 </html>
-<script>
+<!-- <script>
   function viewvideo() {
     console.log('aa');
     var video = document.querySelector('#video');
@@ -69,4 +73,4 @@ $result = $conn -> query($sql);
     });
     /* location.href = 'player.php' */
   }
-</script>
+</script> -->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <!--
+      구문 : if, for 리턴값 X
+      표현식 : 1 + X 리턴값 O
+
+      () :
+      {} :
+      [] :
+
+      var : 재선언 가능, 함수단위 생명력
+      let, const : 블록단위 생명력
+      const : 상수
+
+      null은 object
+      undefined는 tepy
+    -->
+  </div>
+  <button type="button" onclick="singin()">로그인</button>
+  <script>
+    function singin() {
+      var id = prompt('아이디를 입력해 주세요');
+      while (id) {
+        if (id == 'chang') {
+          prompt('비밀번호를 입력해 주세요');
+        } else if (id != 'chang') {
+          console.log('취소');
+        } 
+        break;
+      }
+    }
+  </script>
+</body>
+</html>
