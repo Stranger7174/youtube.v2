@@ -24,17 +24,68 @@
       undefined는 tepy
     -->
   </div>
-  <button type="button" onclick="singin()">로그인</button>
+  
+  <input type="text" id="eventy">
+  <input type="text" id="eventx">
+  <button type="button" onclick="singin()">이벤트</button>
   <script>
-    function singin() {
-      var id = prompt('아이디를 입력해 주세요');
-      while (id) {
-        if (id == 'chang') {
-          prompt('비밀번호를 입력해 주세요');
-        } else if (id != 'chang') {
-          console.log('취소');
-        } 
-        break;
+    function singin(pow) {
+      var eventx = document.getElementById('eventx').value;
+      var eventy = document.getElementById('eventy').value;
+      console.log('aa');
+      // console.log(eventx);
+      
+    }
+    function pow (eventx, eventy) {
+      //제곱값 구하기
+      var resurt = eventx;
+      for (; eventy; eventy--) {
+         resurt *= eventx;
+        // eventy--;
+        
+      }
+      return resurt;
+    }
+    function min (eventx, eventy) {
+      //작은값 구하기
+      
+    }
+    //콜백함수 : 함수를 다른 함수의 인자로 전달하여 실행
+    // function sum(a, b) {
+    //   return a+b;
+    // }
+    var sum = (a, b) => a+b;
+    var say = () => {
+      var hi = 'hellow';
+      return hi;
+    }
+    // function question (ques, yes, no) {
+    //   confirm(ques) ? yes : no;
+    // }
+    // var question (ques, yes, no) = confirm(ques) ? yes : no;
+    // var yes = alert('동의하셨습니다');
+    // var no = alert('거절하셨습니다');
+    // var user = {
+    //   name : 'john',
+    //   surname : 'Smith'
+    // };
+    // console.log(user);
+    // user.name = 'pete';
+    // console.log(user.name);
+    // delete user.name;
+    // console.log(user);
+    // user = null;
+    // console.log(user);
+
+    var schedule = {};
+    console.log(schedule);
+    alert(isEmpty(schedule));// true
+    schedule["8:30"] = "get up";
+    alert( isEmpty(schedule) ); // false
+
+    function isEmpty() {
+      if (schedule = undefined) {
+        return true;
       }
     }
   </script>
