@@ -118,3 +118,7 @@ nav {
     display: none;
   }
 }
+#content {
+  width: 1500px;
+  left: 150px;
+}
