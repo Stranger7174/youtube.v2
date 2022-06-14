@@ -27,7 +27,7 @@
   
   <input type="text" id="eventy">
   <input type="text" id="eventx">
-  <button type="button" onclick="singin()">이벤트</button>
+  <button type="button" id="event" value="gotime">이벤트</button>
   <script>
     function singin(pow) {
       var eventx = document.getElementById('eventx').value;
@@ -77,17 +77,114 @@
     // user = null;
     // console.log(user);
 
-    var schedule = {};
-    console.log(schedule);
-    alert(isEmpty(schedule));// true
+    /* ar schedule = {};
+    // console.log(schedule);
+    // alert(isEmpty(schedule));// true
     schedule["8:30"] = "get up";
-    alert( isEmpty(schedule) ); // false
+    alert(isEmpty(schedule)); // false
 
-    function isEmpty() {
-      if (schedule = undefined) {
+    function isEmpty(obj) {
+      for (var key in obj) {
+        //console.log(key);
+        console.log(true);
         return true;
       }
+      console.log(false);
+      return false;
+    } */
+    
+    // let salaries = {
+    //   John: 100,
+    //   sizes: {//객체안의 변수를 속성
+    //   }
+    //   Ann: 160,
+    //   Pete: 130
+    // }
+    // var say = () {//객체안의 함수를 매서드
+    // }
+    // function salaries() {
+
+    // }
+    //참조 : 값에 의한 or 주소에 의한
+    //값 : call by value => 원시 데이터
+    //주소 : call by referance => 객체
+
+    //화살표 함수에는 this가 없다
+    //this는 보통 윈도우를 가리킴
+    // var user = () => {
+    //   return {
+    //     name: 'john',
+    //     ref: this
+    //   };
+    // };
+    // alert(user.ref());
+
+    /* function makeUser() {
+      return {
+        name: "John",
+        ref: this
+      };
+    };
+
+    let user = makeUser();
+
+    alert( user().ref ); // Error: Cannot read property 'name' of undefined */
+
+    // var calculator = {
+    //   isX() {
+    //     alert('작동');
+    //     prompt('첫번째 값을 입력해 주세요');
+    //   }
+    //   // isY() {prompt('두번째 값을 입력해 주세요')}
+    //   // sum = xx + yy
+    //   // mul = xx * yy
+    // };
+    // alert(calculator.isX);
+    // console.log(calculator.mul);
+
+    //setinterval: 시간에 따른 반복
+    var timemachine = document.getElementById('event');
+    var clock = { //객체 생성자함수
+      div: document.createElement('div'),
+
+      
+      init: function(target) {
+        var link = document.createElement('link');
+        // link.rel = 'stylesheet';
+        link.href = "https://fonts.googleapis.com/css2?family=Jua&display=swap";
+        document.head.appendChild(link);
+
+        // this.div.id = 'clock';
+        target.appendChild(this.div);
+        this.style();
+        this.run();
+      },
+      run: function() {
+        var thet = this;
+        setInterval(function () {
+          var now = new Date();
+          thet.div.innerText = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+        }, 1000);
+      },
+      style: function() {
+        this.div.style.fontSize = '5vw';
+        this.div.style.color = 'red';
+        this.div.style.fontWeight = 'bold';
+        this.div.style.fontFamily = 'Fascinate';
+      }
     }
+    clock.init(document.body);
+    timemachine.addEventListener('click', function (clock) {
+      if (timemachine.value === 'gotime') {
+        // console.log('작동' + timemachine.value);
+        timemachine.value = 'stoptime';
+      } else {
+        clearInterval(div);
+        // console.log('멈춤' + timemachine.value);
+        timemachine.value = 'gotime';
+      }
+    });
+    // function 
   </script>
 </body>
 </html>
