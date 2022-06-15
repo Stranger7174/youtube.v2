@@ -1,0 +1,32 @@
+<head>
+  <style>
+      #img {
+          width: 200px;
+      }
+  </style>
+</head>
+<body>
+  <div>
+      <img src="https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png" viewbox: '122 111 333 333 333'; id="img" />
+  </div>
+</body>
+<script type="text/javascript">
+//https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png
+//https://a.cdn-hotels.com/gdcs/production47/d1059/04077388-e2a5-4952-88d6-4cd6ffe07710.jpg
+//https://mblogthumb-phinf.pstatic.net/MjAxNzAxMDdfMTE2/MDAxNDgzNzU1MDMyNTc0.hx5KAnplO4tzx7gyHo0OXzPvyCH5h7gfLjMf-S5qamAg.oUP8V58A0P0ZybvJw_-Dq57FbxOxV9o1MU4tRdnbORwg.JPEG.candle_yt/4.jpg
+(function() {
+  //객체화
+  let img = document.querySelector('#img');    
+  let i = 0;
+  let arrImgs = [
+      'https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png',
+      'https://a.cdn-hotels.com/gdcs/production47/d1059/04077388-e2a5-4952-88d6-4cd6ffe07710.jpg',
+      'https://t1.daumcdn.net/cfile/tistory/9946A4505F5817A60D'
+  ];
+  setInterval(function () {
+      img.src = arrImgs[i];
+      i = i >= 2 ? 0 : ++i;
+  }, 2000);
+})();
+
+</script>

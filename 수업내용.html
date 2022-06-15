@@ -5,6 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    #img {
+      width: 1000px;
+      
+    }
+  </style>
 </head>
 <body>
   <div>
@@ -24,10 +30,31 @@
       undefined는 tepy
     -->
   </div>
-  
-  <input type="text" id="eventy">
+  <div>
+    <img src="./img/game.svg" alt="" id="img">
+  </div>
+  <script>
+    (function () {
+      console.log('함수실행');
+      let img = document.querySelector('#img');
+      let i = 0;
+      let imgarry = [
+        './img/home.svg',
+        './img/bar.svg',
+        './img/compass.svg',
+        './img/game.svg',
+        './img/keybord.svg'
+      ];
+      setInterval(function () {
+        console.log('작동');
+        img.src = imgarry[i];
+        i = i >= 4 ? 0 : i++;
+      }, 1000);
+    })();
+  </script>
+  <!-- <input type="text" id="eventy">
   <input type="text" id="eventx">
-  <button type="button" id="event" value="gotime">이벤트</button>
+  <button type="button" id="event" value="gotime">이벤트</button> -->
   <script>
     function singin(pow) {
       var eventx = document.getElementById('eventx').value;
@@ -143,48 +170,103 @@
     // console.log(calculator.mul);
 
     //setinterval: 시간에 따른 반복
-    var timemachine = document.getElementById('event');
-    var clock = { //객체 생성자함수
-      div: document.createElement('div'),
+    
+/*     (function () {
+      var clock = { //객체 생성자함수
+        div: document.createElement('div'),
+        timemachine: document.getElementById('event'),
+        
+        init: function(target) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = "https://fonts.googleapis.com/css2?family=Jua&display=swap";
+          document.head.appendChild(link);
 
-      
-      init: function(target) {
-        var link = document.createElement('link');
-        // link.rel = 'stylesheet';
-        link.href = "https://fonts.googleapis.com/css2?family=Jua&display=swap";
-        document.head.appendChild(link);
+          // this.div.id = 'clock';
+          target.appendChild(this.div);
+          this.style();
+          this.stop();
+        },
+              
+        stop: function() {
+          var thet = this;
+          var timer = this.run();
+          this.timemachine.onclick = function () { //stop 밖에 있을때는 잘됨 들어오면 먹통? => init에서 stop을 안불러와서 생긴 문제
+            if (thet.timemachine.value === 'gotime') { //작동
+              console.log('작동' + thet.timemachine.value);
+              thet.timemachine.value = 'stoptime';
+              timer = thet.run();
+            } else { //멈춤
+              console.log('멈춤' + thet.timemachine.value);
+              thet.timemachine.value = 'gotime';
+              clearInterval(timer);
+            }
+          };
+        },
+        setDigial: function(num) {
+          return num > 9 ? num : '0' + num;
+        },
+        run: function() {
+          var thet = this;
+          let timer = setInterval(function () {
+            var now = new Date();
+            let hour = now.getHours();
+            let sethour = hour > 12 ? 'PM' + (thet.setDigial(hour - 12)) : 'am' + (thet.setDigial(hour - 12));
+            thet.div.innerText = sethour + ':' + thet.setDigial(now.getMinutes()) + ':' + thet.setDigial(now.getSeconds());
 
-        // this.div.id = 'clock';
-        target.appendChild(this.div);
-        this.style();
-        this.run();
-      },
-      run: function() {
-        var thet = this;
-        setInterval(function () {
-          var now = new Date();
-          thet.div.innerText = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
-        }, 1000);
-      },
-      style: function() {
-        this.div.style.fontSize = '5vw';
-        this.div.style.color = 'red';
-        this.div.style.fontWeight = 'bold';
-        this.div.style.fontFamily = 'Fascinate';
-      }
-    }
-    clock.init(document.body);
-    timemachine.addEventListener('click', function (clock) {
-      if (timemachine.value === 'gotime') {
-        // console.log('작동' + timemachine.value);
-        timemachine.value = 'stoptime';
-      } else {
-        clearInterval(div);
-        // console.log('멈춤' + timemachine.value);
-        timemachine.value = 'gotime';
-      }
-    });
-    // function 
+          }, 1000);
+
+
+          return timer;
+        },
+        style: function() {
+          this.div.style.fontSize = '5vw';
+          this.div.style.color = 'red';
+          this.div.style.fontWeight = 'bold';
+          this.div.style.fontFamily = 'Fascinate';
+        },
+      };
+
+      clock.init(document.body);
+  })(); */
+
+/*   function calculator() {
+    this.a = 0;
+    this.b = 0;
+    this.read = function() {
+      this.a = Number(prompt('Number?'));
+      this.b = Number(prompt('Number?'));
+    };
+    this.sum = function() {
+      return this.a + this.b;
+    };
+    this.mul = function() {
+      return this.a * this.b;
+    };
+  }
+  let c = new calculator();
+  c.read();
+  console.log(c.sum());
+  console.log(c.sum()); */
+
+/*   function Accumulatar(strartingValue) {
+    this.value = strartingValue;
+    this.read = function() {
+      let sumValue = +prompt('Number?');
+      this.value +=sumValue;
+    };
+  }
+  let a = new Accumulatar(1);
+  a.value = 100;
+  a.read();
+  a.read();
+  a.read();
+  a.read();
+  alert(a.value); */
+  //연속적인 자료를 배열에 저장 
+  //베열은 index로 값을 읽음
+  //length속성이 있음(배열의 크기)
+  //배열 + for문
   </script>
 </body>
 </html>
