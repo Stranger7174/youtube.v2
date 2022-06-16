@@ -30,7 +30,41 @@
       undefined는 tepy
     -->
   </div>
-  <div>
+  <input type="text" id = 'innerlist'>
+  <button id="innerbtn" onclick="innerlist()" onkeyup="innerlist(32)">추가</button>
+  <ul id="islist"></ul>
+  <script>
+    function innerlist() {
+      //html요소 가져오기
+      let addbar = document.getElementById('innerlist');
+      let btn = document.getElementById('innerbtn');
+      let list = document.getElementById('islist');
+      let listarr = [454];//list목록 배열
+      console.log(listarr.length);
+      console.log(listarr.length ==arr 0 ? 0 : listarr.value++);
+      //자식요소 생성
+      let addlist = document.createElement('li');
+      let addbtn = document.createElement('button');
+      list.appendChild(addlist, addbtn);
+      addlist.innerHTML = addbar.value;
+      
+      // addbtn.;
+      addlist.classList.add('listChid');
+      //버튼 생성
+      addbar.value = null;//input태그의 밸류 삭제
+
+
+    }
+    // (function () {
+    //   let result = [23, 44, 56, 75, 46];
+    //   let leng = result.length;
+
+    //   for (i = 0; i < leng; i++) {
+    //     console.log(Math(result(a - b)));
+    //   }
+    // })();
+  </script>
+  <!-- <div>
     <img src="./img/game.svg" alt="" id="img">
   </div>
   <script>
@@ -51,7 +85,7 @@
         i = i >= 4 ? 0 : i++;
       }, 1000);
     })();
-  </script>
+  </script> -->
   <!-- <input type="text" id="eventy">
   <input type="text" id="eventx">
   <button type="button" id="event" value="gotime">이벤트</button> -->
@@ -170,8 +204,7 @@
     // console.log(calculator.mul);
 
     //setinterval: 시간에 따른 반복
-    
-/*     (function () {
+     /* (function () {
       var clock = { //객체 생성자함수
         div: document.createElement('div'),
         timemachine: document.getElementById('event'),
@@ -189,17 +222,20 @@
         },
               
         stop: function() {
-          var thet = this;
-          var timer = this.run();
+          let thet = this;
+          let timer = this.run();//첫번째 시계생성
+          console.log(timer);
           this.timemachine.onclick = function () { //stop 밖에 있을때는 잘됨 들어오면 먹통? => init에서 stop을 안불러와서 생긴 문제
-            if (thet.timemachine.value === 'gotime') { //작동
+            if (thet.timemachine.value !== 'gotime') { //작동
               console.log('작동' + thet.timemachine.value);
               thet.timemachine.value = 'stoptime';
-              timer = thet.run();
+              timer = thet.run();//두번째 시계생성
+              console.log(timer);
             } else { //멈춤
               console.log('멈춤' + thet.timemachine.value);
               thet.timemachine.value = 'gotime';
-              clearInterval(timer);
+              console.log(timer);
+              clearInterval(timer);//두번째 시계멈춤, 첫번째 시계 작동 => 시계 계속 작동
             }
           };
         },
@@ -269,4 +305,37 @@
   //배열 + for문
   </script>
 </body>
+<!-- <head>
+  <style>
+      #img {
+          width: 200px;
+      }
+  </style>
+</head>
+<body>
+  <div>
+    <svg viewbox: '-200 -200 200 200'>
+      <img src="" id="img" />
+    </svg>
+  </div>
+</body>
+<script type="text/javascript">
+//https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png
+//https://a.cdn-hotels.com/gdcs/production47/d1059/04077388-e2a5-4952-88d6-4cd6ffe07710.jpg
+//https://mblogthumb-phinf.pstatic.net/MjAxNzAxMDdfMTE2/MDAxNDgzNzU1MDMyNTc0.hx5KAnplO4tzx7gyHo0OXzPvyCH5h7gfLjMf-S5qamAg.oUP8V58A0P0ZybvJw_-Dq57FbxOxV9o1MU4tRdnbORwg.JPEG.candle_yt/4.jpg
+(function() {
+  //객체화
+  let img = document.querySelector('#img');    
+  let i = 0;
+  let arrImgs = [
+      'https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png',
+      'https://a.cdn-hotels.com/gdcs/production47/d1059/04077388-e2a5-4952-88d6-4cd6ffe07710.jpg',
+      'https://t1.daumcdn.net/cfile/tistory/9946A4505F5817A60D'
+  ];
+  setInterval(function () {
+      img.src = arrImgs[i];
+      i = i >= 2 ? 0 : ++i;
+  }, 2000);
+})();
+</script> -->
 </html>
