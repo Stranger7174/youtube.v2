@@ -31,38 +31,69 @@
     -->
   </div>
   <input type="text" id = 'innerlist'>
-  <button id="innerbtn" onclick="innerlist()" onkeyup="innerlist(32)">추가</button>
+  <button id="innerbtn" onclick="innerlist()">추가</button>
   <ul id="islist"></ul>
   <script>
-    function innerlist() {
-      //html요소 가져오기
+    function innerlist() {//html요소 가져오기, 함수호출
       let addbar = document.getElementById('innerlist');
       let btn = document.getElementById('innerbtn');
       let list = document.getElementById('islist');
-      let listarr = [454];//list목록 배열
-      console.log(listarr.length);
-      console.log(listarr.length ==arr 0 ? 0 : listarr.value++);
-      //자식요소 생성
-      let addlist = document.createElement('li');
-      let addbtn = document.createElement('button');
-      list.appendChild(addlist, addbtn);
-      addlist.innerHTML = addbar.value;
+      // 리스트 요소: i++, 내용(은 아래에)
+      let listarr = [];
+
+      //함수 호출
+      new addlist(addbar, btn, listarr);
+      // console.log(listarr.length);
       
-      // addbtn.;
-      addlist.classList.add('listChid');
-      //버튼 생성
-      addbar.value = null;//input태그의 밸류 삭제
-
-
     }
-    // (function () {
-    //   let result = [23, 44, 56, 75, 46];
-    //   let leng = result.length;
 
-    //   for (i = 0; i < leng; i++) {
-    //     console.log(Math(result(a - b)));
-    //   }
-    // })();
+    let addlist = function (addbar, btn, listarr) {
+      let no = btn.value = listarr.legth;
+      // console.log(addbar.value);
+      listarr.push[addbar.value, no];
+      console.dir(listarr);
+    }
+
+    /* let showlist = function () {//자식요소 생성
+      
+      for (i)
+      let addlist = document.createElement('li');
+      list.appendChild(addlist);//생성
+      addlist.classList.add('listChid');//클래스 생성
+      let addDiv = document.createElement('div');
+      addlist.appendChild(addDiv);//생성
+      let addbtn = document.createElement('button');
+      addlist.appendChild(addbtn);//삭제버튼생성
+      addbtn.classList.add('delbtn');
+
+      //input태그의 밸류 삭제
+      addbtn.innerHTML = '삭제';
+      addbtn.onclick = deletelist;
+      addDiv.innerHTML = addbar.value;
+      addbar.value = null;
+    } */
+
+    /* let deletelist = function () {//선택한 리스트삭제
+      
+      //문제
+      // 1 첫번째 버튼 클릭시 모든 리스트 사라짐 => parentElement에 접근하는걸로 해결
+      // 2 그외 버튼 작동 안함
+      // 3 첫버튼만 작동, 리스트가 여러개 있을경우 작동안함
+      // 4 빈 리스트를 만들고 다시 누르면 작동: 안보이는 버튼이 생긴것 같다???
+
+      // 분리후
+      // 5 body에 접근해서 태그를 전부삭제: 타겟을 지정해줘야 할듯
+
+      //addlist에서 onclick설정으로 body에 접근하는 문제 해결, 
+
+      // console.log(dellist);
+      // let dellistprt = deletelist.parentElement;
+      // console.log(dellistprt);
+
+      // event.target.parentElement.remove();
+
+      event.target.parentElement.remove();
+    } */
   </script>
   <!-- <div>
     <img src="./img/game.svg" alt="" id="img">
