@@ -9,49 +9,49 @@
   flex-flow: wrap;
 }
 .grid-col-1 {
-  width: 3.90625vw;
+  width: 8.24561403508772vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-2 {
-  width: 8.854166666666668vw;
+  width: 18.24561403508772vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-3 {
-  width: 13.802083333333334vw;
+  width: 28.24561403508772vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-4 {
-  width: 18.75vw;
+  width: 38.24561403508772vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-5 {
-  width: 23.697916666666664vw;
+  width: 48.24561403508772vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-6 {
-  width: 28.645833333333332vw;
+  width:58.245614035087726vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-7 {
-  width: 33.59375vw;
+  width: 68.24561403508773vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-8 {
-  width: 38.54166666666667vw;
+  width: 78.24561403508771vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-9 {
-  width: 43.48958333333333vw;
+  width: 88.24561403508771vw;
   margin: 1.0416666666666665vw;
 }
 .grid-col-10 {
-  width: 48.4375vw;
+  width: 98.24561403508771vw;
   margin: 1.0416666666666665vw;
 }
-.fst-chld {
+.fst-col {
   margin-left: 0.5208333333333333vw;
 }
-.lst-chld {
+.lst-col {
   margin-right: 0.5208333333333333vw;
 }
 ul {
@@ -66,4 +66,13 @@ ul > li {
   margin-left: 0;
   list-style: none;
   
+}
+.viwe1 {
+  background-color: darkgrey;
+}
+.viwe2 {
+  background-color: grey;
+}
+.viwe3 {
+  background-color: red;
 }
