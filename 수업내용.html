@@ -31,28 +31,48 @@
     -->
   </div>
   <input type="text" id = 'innerlist'>
-  <button id="innerbtn" onclick="innerlist()">추가</button>
+  <button id="innerbtn">추가</button>
   <ul id="islist"></ul>
   <script>
-    function innerlist() {//html요소 가져오기, 함수호출
-      let addbar = document.getElementById('innerlist');
-      let btn = document.getElementById('innerbtn');
-      let list = document.getElementById('islist');
-      // 리스트 요소: i++, 내용(은 아래에)
-      let listarr = [];
 
-      //함수 호출
-      new addlist(addbar, btn, listarr);
-      // console.log(listarr.length);
+(function () {
+
+      let Innerlist = {//html요소 가져오기, 함수호출
+        listarr: [],
+        inte: 0,
+        btn: document.getElementById('innerbtn'),
+
+        init: function () {
+          let addbar = document.getElementById('innerlist');
+          let list = document.getElementById('islist');
+          this.arr(addbar, btn);
+        },
+
+        // innerlist(document.body);
+        // console.log(innerlist);
+        // //배열 입력
+        arr: function (addbar) {
+          this.btn.onclick = {
+            console.log(addbar.value);
+          };
+        console.log(addbar.value);
+        listarr.push([addbar.value, inte++]);
+        console.log(listarr);
+        },
+        // //배열출력
+        // // function output (listarr) {
+        // //   let apenlist = list.innerHTML;
+        // //   let islist = listarr[inte++];
+        // //   console.log('addbar');
+        // //   while (listarr) {
+        // //     // apenlist = '<li>''</li>';
+        // //   }
+        // // }
       
-    }
+      };      
+    })();
 
-    let addlist = function (addbar, btn, listarr) {
-      let no = btn.value = listarr.legth;
-      // console.log(addbar.value);
-      listarr.push[addbar.value, no];
-      console.dir(listarr);
-    }
+
 
     /* let showlist = function () {//자식요소 생성
       
@@ -121,36 +141,6 @@
   <input type="text" id="eventx">
   <button type="button" id="event" value="gotime">이벤트</button> -->
   <script>
-    function singin(pow) {
-      var eventx = document.getElementById('eventx').value;
-      var eventy = document.getElementById('eventy').value;
-      console.log('aa');
-      // console.log(eventx);
-      
-    }
-    function pow (eventx, eventy) {
-      //제곱값 구하기
-      var resurt = eventx;
-      for (; eventy; eventy--) {
-         resurt *= eventx;
-        // eventy--;
-        
-      }
-      return resurt;
-    }
-    function min (eventx, eventy) {
-      //작은값 구하기
-      
-    }
-    //콜백함수 : 함수를 다른 함수의 인자로 전달하여 실행
-    // function sum(a, b) {
-    //   return a+b;
-    // }
-    var sum = (a, b) => a+b;
-    var say = () => {
-      var hi = 'hellow';
-      return hi;
-    }
     // function question (ques, yes, no) {
     //   confirm(ques) ? yes : no;
     // }
@@ -211,31 +201,7 @@
     // };
     // alert(user.ref());
 
-    /* function makeUser() {
-      return {
-        name: "John",
-        ref: this
-      };
-    };
-
-    let user = makeUser();
-
-    alert( user().ref ); // Error: Cannot read property 'name' of undefined */
-
-    // var calculator = {
-    //   isX() {
-    //     alert('작동');
-    //     prompt('첫번째 값을 입력해 주세요');
-    //   }
-    //   // isY() {prompt('두번째 값을 입력해 주세요')}
-    //   // sum = xx + yy
-    //   // mul = xx * yy
-    // };
-    // alert(calculator.isX);
-    // console.log(calculator.mul);
-
-    //setinterval: 시간에 따른 반복
-     /* (function () {
+     (function () {
       var clock = { //객체 생성자함수
         div: document.createElement('div'),
         timemachine: document.getElementById('event'),
@@ -261,11 +227,9 @@
               console.log('작동' + thet.timemachine.value);
               thet.timemachine.value = 'stoptime';
               timer = thet.run();//두번째 시계생성
-              console.log(timer);
             } else { //멈춤
               console.log('멈춤' + thet.timemachine.value);
               thet.timemachine.value = 'gotime';
-              console.log(timer);
               clearInterval(timer);//두번째 시계멈춤, 첫번째 시계 작동 => 시계 계속 작동
             }
           };
@@ -295,7 +259,7 @@
       };
 
       clock.init(document.body);
-  })(); */
+  })();
 
 /*   function calculator() {
     this.a = 0;
@@ -336,6 +300,26 @@
   //배열 + for문
   </script>
 </body>
+<!-- 
+자료형 종류
+  문자형
+  -"", '', `` 으로 묶어야 인식 ``안에는 변수등 저장가능(제이쿼리인듯)
+
+  숫자형
+  -BigInt 끝에 n붙이면 됨
+  -infinity, NaN
+  
+  불린형
+  -true와 false뿐임
+
+  null, undefined
+  ???
+
+  객체형
+  복잡한 자료형을 표현할때 사용
+
+  
+-->
 <!-- <head>
   <style>
       #img {
@@ -369,4 +353,456 @@
   }, 2000);
 })();
 </script> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ctrl"></div>
+    <div id="show"></div>
+    <script>
+        let tableStyle = {
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: '#000000',
+            borderCollapse: 'collapse'
+        };
+
+        let tdStyle = {
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: '#000000',
+            width: '20px',
+            height: '20px'
+        };
+
+        let boxStyle = {
+            width: '50px',
+            height: '20px',
+            border: '1px solid black'
+        };
+
+        function TableContral(show, control) {
+            let trCnt = 1;
+            let tdCnt = 1;
+            let table = document.createElement("table");
+            let trRange = document.createElement("input");
+            let trBox = document.createElement("input");
+            let tdRange = document.createElement("input");
+            let tdBox = document.createElement("input");
+            let colorBox = document.createElement("input");
+
+            this.init = function() {    
+                Object.assign(table.style, tableStyle);
+                show.appendChild(table);
+                for (let i = 0; i < trCnt; i++ ) {
+                    let tr = document.createElement("tr");
+                    let td = document.createElement("td");
+                    table.appendChild(tr);
+                    Object.assign(td.style, tdStyle);
+                    tr.appendChild(td);
+                }
+               
+                let trLabel = document.createElement('label');
+                trLabel.innerText = 'TR '
+                trRange.type = "range";
+                trRange.min = 1;
+                trRange.max = 100;
+                trRange.value = trCnt;
+                trRange.oninput = this.chgTr;
+                ctrl.appendChild(trLabel);
+                ctrl.appendChild(trRange);
+
+                trBox.type = "text";
+                trBox.readOnly = true;
+                trBox.value = trCnt;
+                Object.assign(trBox.style, boxStyle);
+                ctrl.appendChild(trBox);
+
+                ctrl.appendChild(document.createElement("br"));
+
+                let tdLabel = document.createElement('label');
+                tdLabel.innerText = 'TD '
+                tdRange.type = "range";
+                tdRange.min = 1;
+                tdRange.max = 100;
+                tdRange.value = trCnt;
+                tdRange.oninput = this.chgTd;
+                ctrl.appendChild(tdLabel);
+                ctrl.appendChild(tdRange);
+
+                tdBox.type = "text";
+                tdBox.readOnly = true;
+                tdBox.value = trCnt;
+                Object.assign(tdBox.style, boxStyle);
+                ctrl.appendChild(tdBox);
+
+                ctrl.appendChild(document.createElement("br"));
+
+                colorBox.type = "color";
+                colorBox.onchange = this.chgBorderColor;
+                ctrl.appendChild(colorBox);
+
+                ctrl.appendChild(document.createElement("hr"));
+            };
+            let makeTable = function() {
+                table.innerHTML = '';
+                // for (let elem of table.childNodes) {
+                //     table.removeChild(elem);
+                // }
+
+                for (let i = 0; i < trCnt; i++) {
+                    let tr = document.createElement("tr");
+                    for (let j = 0; j < tdCnt; j++) {
+                        let td = document.createElement("td");
+                        Object.assign(td.style, tdStyle);
+                        tr.appendChild(td);
+                    }
+                    table.appendChild(tr);
+                }
+            };
+            this.chgTr = function (e) {
+                trCnt = e.target.value;
+                trBox.value = e.target.value;
+                makeTable();
+            };
+            this.chgTd = function (e) {
+                tdCnt = e.target.value;
+                tdBox.value = e.target.value;
+                makeTable();
+            };
+            this.chgBorderColor = function (e) {
+                tableStyle.borderColor = e.target.value;
+                tdStyle.borderColor = e.target.value;
+                Object.assign(table.style, tableStyle);
+                for (let i = 0; i < table.rows.length; i++) {
+                    for (let j = 0; j < table.rows[i].cells.length; j++) {
+                        Object.assign(table.rows[i].cells[j].style, tdStyle);
+                    }
+                }
+            };
+            this.setTrCnt = function (num) {
+                trCnt = num;
+            };
+            this.getTrCnt = function () {
+                return trCnt;
+            };
+            this.setTdCnt = function (num) {
+                tdCnt = num;
+            };
+            this.getTdCnt = function () {
+                return tdCnt;
+            }
+        }
+
+        let table = new TableContral(
+            document.getElementById('show'),
+            document.getElementById('ctrl')
+        );
+        table.init();
+    </script>    
+</body> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Clock() {
+            let wraper = document.createElement("div");
+            let timerArea = document.createElement("div");
+            let alarmArea = document.createElement("div");
+            let bg = document.createElement("div");
+            let audio = document.createElement("audio");
+            let soundAlarm = document.createElement("audio");
+            let hourHand = document.createElement("div");
+            let minHand = document.createElement("div");
+            let secHand = document.createElement("div");
+            let selectAP = document.createElement("select");
+            let selectHour = document.createElement("select");
+            let selectMin = document.createElement("select");
+            let alarmList = document.createElement("div");
+            let alarms = [];
+
+            this.run = function () {
+                init();
+                interval();
+            };
+            let init = function () {
+                document.documentElement.style.height = "100%";
+                let body = document.body;
+                body.style.height = "100%";
+                body.style.margin = 0;
+
+                body.appendChild(wraper);
+                wraper.style.height = "100%";
+                wraper.style.display = "flex";
+                wraper.appendChild(timerArea);
+                timerArea.style.position = "relative";
+                timerArea.style.height = "100%";
+                timerArea.style.flex = "1 1 70%";
+                wraper.appendChild(alarmArea);
+                alarmArea.style.height = "100%";
+                alarmArea.style.flex = "1 1 30%";
+
+                setCenterElement(bg);
+                bgSize();
+                window.onresize = winResize;
+
+                audio.src = "clock.mp3";
+                audio.muted = true;
+                audio.loop = true;
+                body.appendChild(audio);
+
+                soundAlarm.src = "alarm.mp3";
+                soundAlarm.loop = true;
+                body.appendChild(soundAlarm);
+
+                let border = document.createElement("div");
+                setCenterElement(border)
+                border.style.borderRadius = "50%";
+                border.style.width = "80%";
+                border.style.height = "80%";
+                border.style.borderWidth = "5px";
+                border.style.borderStyle = "hidden";
+                border.style.borderColor = "block";
+                border.style.boxShadow = "1px 1px 3px black";
+                border.style.background = "rgb(255,255,255)";
+                border.style.background = "radial-gradient(circle, rgba(255,255,255,1) 56%, rgba(221,221,221,1) 100%)";
+                border.onclick = playSound;
+
+                let logo = document.createElement("div");
+                logo.innerText = "Time waits for no one.";
+                setCenterElement(logo);
+                logo.style.fontSize = '1.5vw';
+                logo.style.top = "67%";
+
+                for (let i = 0; i < 60; i++) {
+                    let indicator = document.createElement("div");
+                    setCenterElement(indicator);
+
+                    if (i % 5) {
+                        indicator.style.width = "0.2%";
+                        indicator.style.height = "8%";
+                        indicator.style.backgroundColor = "black";
+                    } else {
+                        indicator.style.width = "1%";
+                        indicator.style.height = "8%";
+                        indicator.style.backgroundColor = "black";
+                        indicator.style.boxShadow = "-1px 2px 3px black";
+                    }
+
+                    indicator.style.transform = `translate(-50%, -50%) rotate(${i * 6}deg) translate(0, 540%)`;
+                    border.appendChild(indicator);
+                }
+
+                setCenterElement(hourHand);
+                hourHand.style.borderRadius = "50% / 90% 90% 10% 10%";
+                hourHand.style.width = "2%";
+                hourHand.style.height = "30%";
+                hourHand.style.backgroundColor = "black";
+                hourHand.style.boxShadow = "1px 1px 4px black";
+                hourHand.style.transform = `translate(-50%, -50%) rotate(0deg) translate(0, -40%)`;
+
+                setCenterElement(minHand);
+                minHand.style.borderRadius = "50% / 90% 90% 10% 10%";
+                minHand.style.width = "2%";
+                minHand.style.height = "42%";
+                minHand.style.backgroundColor = "black";
+                minHand.style.boxShadow = "1px 1px 4px black";
+                minHand.style.transform = `translate(-50%, -50%) rotate(0deg) translate(0, -40%)`;
+
+                setCenterElement(secHand);
+                secHand.style.borderRadius = "50% / 90% 90% 10% 10%";
+                secHand.style.width = "1%";
+                secHand.style.height = "46%";
+                secHand.style.backgroundColor = "black";
+                secHand.style.boxShadow = "1px 1px 4px black";
+                secHand.style.transform = `translate(-50%, -50%) rotate(0deg) translate(0, -40%)`;
+
+                border.appendChild(logo);
+                border.appendChild(hourHand);
+                border.appendChild(minHand);
+                border.appendChild(secHand)
+                bg.appendChild(border);
+                timerArea.appendChild(bg);
+                //body.appendChild(bg);
+
+                let inputArea = document.createElement("div");
+                let setBtn = document.createElement("button");
+
+                for (let i = 0; i < 2; i++) {
+                    let option = document.createElement("option");
+                    option.innerText = i ? "PM" : "AM";
+                    selectAP.appendChild(option);
+                }
+
+                for (let i = 0; i < 12; i++) {
+                    let option = document.createElement("option");
+                    option.innerText = i + 1;
+                    selectHour.appendChild(option);
+                }
+
+                for (let i = 0; i < 59; i++) {
+                    let option = document.createElement("option");
+                    option.innerText = i;
+                    selectMin.appendChild(option);
+                }
+
+                setBtn.innerHTML = "알람 설정";
+                setBtn.onclick = addAlarm;
+
+                inputArea.appendChild(selectAP);
+                inputArea.appendChild(selectHour);
+                inputArea.appendChild(selectMin);
+                inputArea.appendChild(setBtn);
+                alarmArea.appendChild(inputArea);
+                alarmArea.appendChild(alarmList);
+            };
+            let interval = function () {
+                setInterval(function () {
+                    let now = new Date();
+                    let hour = now.getHours();
+                    let min = now.getMinutes();
+                    let sec = now.getSeconds();
+                    let degHour = hour * 30 + min / 2;
+                    let degMin = min * 6;
+                    let degSec = sec * 6;
+                    let lanAlarms = alarms.length;
+
+                    hourHand.style.transform = `translate(-50%, -50%) rotate(${degHour}deg) translate(0, -40%)`;
+                    minHand.style.transform = `translate(-50%, -50%) rotate(${degMin}deg) translate(0, -40%)`;
+                    secHand.style.transform = `translate(-50%, -50%) rotate(${degSec}deg) translate(0, -40%)`;
+
+
+                    for (var i = 0; i < lanAlarms; i++) {
+                        if (hour == alarms[i].realHour && min == alarms[i].min && sec == 0) {
+                            soundAlarm.play();
+                            alarmList.childNodes[i].style.backgroundColor = "lightgreen";
+                            let btnStop = document.createElement("button");
+                            btnStop.innerText = "끄기";
+                            btnStop.dataset.index = i;
+                            btnStop.onclick = function () {
+                                soundAlarm.pause();
+                                soundAlarm.currentTime = 0;
+                                alarmList.childNodes[this.dataset.index].style.backgroundColor = "transparent";
+                                alarmList.childNodes[this.dataset.index].removeChild(this);
+                            }
+                            alarmList.childNodes[i].appendChild(btnStop);
+                        }
+                    }
+                }, 1000);
+                // setTimeout(function () {
+                //     audio.play();
+                //     audio.muted = false;
+                // }, 1500);
+            };
+            let playSound = function () {
+                audio.muted = false;
+                audio.play();
+            };
+            let setCenterElement = function (elem) {
+                elem.style.position = "absolute";
+                elem.style.top = "50%";
+                elem.style.left = "50%";
+                elem.style.transform = "translate(-50%, -50%)";
+            };
+            let winResize = function () {
+                bgSize();
+            };
+            let bgSize = function () {
+                let winHeight = timerArea.clientHeight;
+                let winWidth = timerArea.clientWidth;
+                if (winHeight > winWidth) {
+                    bg.style.height = bg.style.width = winWidth + 'px';
+                } else {
+                    bg.style.height = bg.style.width = winHeight + 'px';
+                }
+            };
+            let setAlarm = function () {
+                let alarm = {
+                    ap: selectAP.value,
+                    hour: +selectHour.value,
+                    min: +selectMin.value,
+                    realHour: selectAP.value == "PM" ? +selectHour.value + 12 : +selectHour.value
+                };
+                return alarm;
+            };
+            let addAlarm = function (e) {
+                let alarm = setAlarm();
+                let found = alarms.findIndex(al => {
+                    if (al.ap == alarm.ap &&
+                        al.hour == alarm.hour &&
+                        al.min == alarm.min) return true;
+                    else return false;
+                });
+
+                if (~found) {
+                    alert("중복");
+                    alarmList.childNodes[found].style.backgroundColor = "red";
+                } else {
+                    alarms.push(alarm);
+                    displayAlarms(true);
+                }
+            };
+            let displayAlarms = function (up) {
+                alarmList.innerHTML = '';
+
+                if (up) {
+                    alarams = alarms.sort((a, b) => {
+                        if (a.ap === b.ap) {
+                            if (a.hour === b.hour) {
+                                return a.min - b.min;
+                            }
+                            return a.hour - b.hour;
+                        }
+                        return a.ap > b.ap ? 1 : -1;
+                    });
+                }
+                for (let i = 0; i < alarms.length; i++) {
+                    let alList = document.createElement("div");
+                    let strAlarm = alarms[i].ap + " " + alarms[i].hour + " : " + alarms[i].min + " ";
+                    let alText = document.createTextNode(strAlarm);
+                    let delAlarm = document.createElement("button");
+                    delAlarm.setAttribute("data-index", i);
+                    delAlarm.innerText = "삭제";
+                    delAlarm.onclick = deleteAlarm;
+                    alList.appendChild(alText);
+                    alList.appendChild(delAlarm);
+                    alarmList.appendChild(alList);
+                }
+            };
+            let deleteAlarm = function (e) {
+                alarms.splice(e.target.dataset.index, 1);
+                displayAlarms(false);
+            }
+        }
+
+        const clock = new Clock();
+        clock.run();
+    </script>
+</body> -->
+Fancybox - https://obu.edu/_resources/ldp/galleries/fancybox/
+Parallax - https://github.com/wagerfield/parallax
+Rellax - https://github.com/dixonandmoe/rellax
+Countup - https://inorganik.github.io/countUp.js/
+Counterup - https://github.com/bfintal/Counter-Up
+Typeit - https://www.typeitjs.com/
+Aos - https://michalsnik.github.io/aos/
+Scrollout - https://scroll-out.github.io/
+Anime.js - https://animejs.com/
+Greensock - https://greensock.com/
 </html>
