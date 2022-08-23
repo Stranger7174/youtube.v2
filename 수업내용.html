@@ -28,51 +28,58 @@
 
       null은 object
       undefined는 tepy
-    -->
+
+      https://velog.io/@fdsa09876/DB-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4Database%EC%9D%98-%EC%A2%85%EB%A5%98
+
+      https://1-day-1-coding.tistory.com/2
+
+      https://dbdiagram.io/home
+
+      http://www.tcpschool.com/mysql/mysql_intro_relationalDB
+
+      https://brownbears.tistory.com/180
+
+      https://wkdtjsgur100.github.io/database-normalization/
+
+      https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%A0%95%EA%B7%9C%ED%99%94
+
+
+      동기: 한 작업이 끝나면 다음작업 실행
+      비동기: 여러작업을 동시에 실행
+      프로세스: 
+      스레드(js는 단일스레드 포함)
+      settimeout, setinterval: 비동기로 만들수 있음 (브라우저에서 지원 (web api), - C, C++)
+      콜백지옥 해결을 위해 프라미스등장 => await/ascyn
+    
+    <script>
+      function coll() {
+        console.log('iscoll');
+      }
+
+      setTimeout(coll, 3000);
+      for (var i = 0; i < 5; i++) {
+        setTimeout(() => {console.log(i), 1000 * i})
+      }
+      console.log('end');
+    </script>
+      -->
   </div>
-  <input type="text" id = 'innerlist'>
-  <button id="innerbtn">추가</button>
-  <ul id="islist"></ul>
   <script>
-
-(function () {
-
-      let Innerlist = {//html요소 가져오기, 함수호출
-        listarr: [],
-        inte: 0,
-        btn: document.getElementById('innerbtn'),
-
-        init: function () {
-          let addbar = document.getElementById('innerlist');
-          let list = document.getElementById('islist');
-          this.arr(addbar, btn);
-        },
-
-        // innerlist(document.body);
-        // console.log(innerlist);
-        // //배열 입력
-        arr: function (addbar) {
-          this.btn.onclick = {
-            console.log(addbar.value);
-          };
-        console.log(addbar.value);
-        listarr.push([addbar.value, inte++]);
-        console.log(listarr);
-        },
-        // //배열출력
-        // // function output (listarr) {
-        // //   let apenlist = list.innerHTML;
-        // //   let islist = listarr[inte++];
-        // //   console.log('addbar');
-        // //   while (listarr) {
-        // //     // apenlist = '<li>''</li>';
-        // //   }
-        // // }
-      
-      };      
-    })();
-
-
+    // 프라미스 객체
+    function mypro(num) {
+      // 결과가 성공, 실패 따져서 실행시켜줌
+      let promise = new promise((resolve , reject) => {
+        setTimeout(() => {
+          let r = num + 10;
+          if (r < 50) {
+            let e = new Error ('장비가 작동하지 않습니다!!');
+            reject(e);
+          }
+          resolve(r);
+        }, 1000)
+      });
+      return promise;
+    }
 
     /* let showlist = function () {//자식요소 생성
       
@@ -805,4 +812,6 @@ Aos - https://michalsnik.github.io/aos/
 Scrollout - https://scroll-out.github.io/
 Anime.js - https://animejs.com/
 Greensock - https://greensock.com/
+https://newsapi.org/
+https://parkbosung.tistory.com/11
 </html>

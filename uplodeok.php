@@ -20,8 +20,7 @@ $sql_u = "insert into video_content set
         title = '$title',
         tag = '$tag',
         uploder = '$uploder',
-        time = '$time'
-        ";
+        time = '$time'";
 
 $result_u = $conn -> query($sql_u);
 
